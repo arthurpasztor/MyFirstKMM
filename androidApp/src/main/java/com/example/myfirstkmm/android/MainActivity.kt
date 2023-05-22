@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myfirstkmm.Greeting
+import com.example.myfirstkmm.MoviesRepository
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    LaunchedEffect(true) {
+                        MoviesRepository().getMoviesList()
+                    }
+
                     var text by remember { mutableStateOf("Loading") }
                     LaunchedEffect(true) {
                         text = try {
