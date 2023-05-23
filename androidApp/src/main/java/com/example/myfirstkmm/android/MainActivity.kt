@@ -9,7 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myfirstkmm.Greeting
-import com.example.myfirstkmm.MoviesRepository
+import com.example.myfirstkmm.repository.MoviesRepository
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +22,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     LaunchedEffect(true) {
                         MoviesRepository().getMoviesList()
+                        MoviesRepository().getMovie("tt0000081")
                     }
 
                     var text by remember { mutableStateOf("Loading") }
