@@ -1,4 +1,4 @@
-package com.example.myfirstkmm
+package com.example.myfirstkmm.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

@@ -1,4 +1,4 @@
-package com.example.myfirstkmm
+package com.example.myfirstkmm.platform
 
 class AndroidPlatform : Platform {
     override val name: String = "Android ${android.os.Build.VERSION.SDK_INT}"

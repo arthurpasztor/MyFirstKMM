@@ -1,6 +1,6 @@
 package com.example.myfirstkmm.repository
 
-import com.example.myfirstkmm.HttpClient.httpClient
+import com.example.myfirstkmm.network.HttpClient.httpClient
 import com.example.myfirstkmm.model.MovieDetails
 import com.example.myfirstkmm.model.MoviesList
 import io.ktor.client.call.body

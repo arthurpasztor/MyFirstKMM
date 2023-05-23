@@ -8,7 +8,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.myfirstkmm.Greeting
+import com.example.myfirstkmm.repository.Greeting
 import com.example.myfirstkmm.repository.MoviesRepository
 
 class MainActivity : ComponentActivity() {

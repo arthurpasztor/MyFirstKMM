@@ -1,4 +1,4 @@
-package com.example.myfirstkmm
+package com.example.myfirstkmm.platform
 
 interface Platform {
     val name: String
