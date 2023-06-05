@@ -11,7 +11,7 @@ import io.ktor.http.URLBuilder
 import io.ktor.http.URLProtocol
 import io.ktor.http.appendPathSegments
 
-class MoviesRepository {
+object MoviesRepository {
 
     suspend fun getMoviesList(): MoviesList {
         return httpClient.get {
