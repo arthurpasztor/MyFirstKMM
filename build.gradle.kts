@@ -1,6 +1,7 @@
 buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:8.0.2")
+        classpath("dev.icerock.moko:resources-generator:0.22.3")
     }
 }
 plugins {

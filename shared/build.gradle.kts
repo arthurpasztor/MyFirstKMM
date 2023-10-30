@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization") version "1.8.10"
+    id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -20,6 +21,8 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
+            export("dev.icerock.moko:resources:0.22.3")
+            export("dev.icerock.moko:graphics:0.9.0")
         }
     }
 
@@ -34,6 +37,8 @@ kotlin {
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
+
+                api("dev.icerock.moko:resources:0.22.3")
             }
         }
         val commonTest by getting {
@@ -79,4 +84,9 @@ android {
         minSdk = 24
         targetSdk = 33
     }
+}
+
+multiplatformResources {
+    multiplatformResourcesPackage = "com.example.myfirstkmm"
+    multiplatformResourcesClassName = "SharedRes"
 }

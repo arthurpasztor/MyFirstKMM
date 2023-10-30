@@ -2,10 +2,13 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let greet = Greeting().greet()
-
 	var body: some View {
-		Text(greet)
+        VStack {
+            Image(resource: \.kermit)
+                .resizable()
+                .aspectRatio(1920/1395, contentMode: .fit)
+            Strings().get(id: SharedRes.strings().hello_world, args: [])
+        }
 	}
 }
 
