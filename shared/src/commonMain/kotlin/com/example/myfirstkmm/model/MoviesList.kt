@@ -4,9 +4,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class MoviesList(
-    val page: String,
-    val entries: Int,
-    val results: List<Movie>
+    val page: String = "1",
+    val entries: Int = 0,
+    val results: List<Movie> = listOf()
 )
 
 @Serializable

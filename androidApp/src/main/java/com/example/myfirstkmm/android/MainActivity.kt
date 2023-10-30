@@ -8,6 +8,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myfirstkmm.MoviesViewModel
 import com.example.myfirstkmm.repository.Greeting
 import com.example.myfirstkmm.repository.MoviesRepository
 
@@ -20,9 +21,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+//                    val viewModel = MoviesViewModel()
                     LaunchedEffect(true) {
-                        MoviesRepository().getMoviesList()
-                        MoviesRepository().getMovie("tt0000081")
+                        MoviesRepository.getMoviesList()
+                        MoviesRepository.getMovie("tt0000081")
                     }
 
                     var text by remember { mutableStateOf("Loading") }

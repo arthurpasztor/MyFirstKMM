@@ -10,8 +10,9 @@ import io.ktor.client.request.headers
 import io.ktor.http.URLBuilder
 import io.ktor.http.URLProtocol
 import io.ktor.http.appendPathSegments
+import kotlinx.coroutines.flow.Flow
 
-class MoviesRepository {
+object MoviesRepository {
 
     suspend fun getMoviesList(): MoviesList {
         return httpClient.get {
@@ -35,6 +36,17 @@ class MoviesRepository {
         }.body()
     }
 
+    suspend fun getMoviesFlow(): Flow<MoviesList> {
+        return httpClient.get {
+            url {
+                extracted(this, this@get)
+                appendPathSegments("titles")
+                parameters.append("page", "1")
+                parameters.append("limit", "20")
+            }
+        }.body()
+    }
+
     private fun extracted(urlBuilder: URLBuilder, httpRequestBuilder: HttpRequestBuilder) {
         urlBuilder.protocol = URLProtocol.HTTPS
         urlBuilder.host = "moviesdatabase.p.rapidapi.com"
@@ -45,5 +57,4 @@ class MoviesRepository {
             )
         }
     }
-
 }
